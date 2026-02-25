@@ -1,3 +1,5 @@
+import hashlib
+
 from PIL import Image
 
 
@@ -24,3 +26,8 @@ class MetadataExtractor:
         except Exception as e:
             self.logger.error(f"Metadata extraction failed for {image_path}: {e}")
             raise
+
+    def generate_image_id(self, image_path):
+        with open(image_path,'rb') as f:
+            conn = f.read()
+        return hashlib.sha256(conn).hexdigest()

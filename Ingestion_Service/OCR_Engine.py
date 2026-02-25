@@ -14,3 +14,6 @@ class OcrEngine:
         except Exception as e:
             self.logger.error(f"ocr failed for {image_path}: {e}")
             raise
+
+        git
+        commit - -amend - m
